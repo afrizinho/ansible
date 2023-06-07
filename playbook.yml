@@ -2,6 +2,13 @@
 - name: Configure switch port as trunk
   hosts: routers
   gather_facts: no
+  
+  vars:
+  ansible_connection: network_cli
+  become: yes
+  become_method: enable
+  collections:
+    - cisco.ios
 
   tasks:
     - name: Set interface mode to trunk
