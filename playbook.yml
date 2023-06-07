@@ -3,15 +3,12 @@
   hosts: routers
   gather_facts: no
 
-
   tasks:
-
     - name: Set interface mode to trunk
       ios_command:
         commands:
           - interface GigabitEthernet10
           - switchport mode trunk
-
       register: output
       until: "'not a switchport' not in output.stdout"
       retries: 5
@@ -20,6 +17,6 @@
     - name: Add all VLANs to trunk
       ios_command:
         commands:
-
           - interface GigabitEthernet10
           - switchport trunk allowed vlan 105,200-299,320,501,550,600-602,631,641,700,800,999,1002-1005
+
