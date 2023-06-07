@@ -1,0 +1,8 @@
+[routers]
+lab-sw-03 ansible_host=192.168.10.16
+
+[routers:vars]
+ansible_network_os=ios
+ansible_connection=network_cli
+ansible_user=ansible
+ansible_password=8$#K&2d9F$35uD&t
